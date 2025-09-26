@@ -155,7 +155,7 @@ function readableId() {
   // short human id; collide rarely enough for demo
   const dune = ["emperor","arrakis","paul","mahdi","fremen","shaihulud","sandworm","chani"];
   const places  = ["lagos","abuja","accra","nairobi","kampala","cairo","jozi","mombasa","ibadan","uyo","benin","kaduna"];
-  const a = animals[(Math.random()*animals.length)|0];
+  const a = dune[(Math.random()*dune.length)|0];
   const p = places[(Math.random()*places.length)|0];
   const n = (Math.random()*899+100)|0;
   return `${a}-${p}-${n}`;
