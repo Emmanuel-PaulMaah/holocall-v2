@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>holocall — AR 1:1 with person cut-out</title>
+  <meta name="description" content="WebRTC + WebXR AR video call with receiver-side person segmentation." />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- MediaPipe (global) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+  <!-- PeerJS (global) -->
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>holocall-v2</h1>
+
+      <div class="grid">
+        <div>
+          <label class="lbl">your id</label>
+          <div class="row">
+            <input id="myId" class="mono" readonly />
+            <button id="copyBtn" class="btn">copy</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="lbl">call this id</label>
+          <div class="row">
+            <input id="remoteId" placeholder="paste partner id…" class="mono" />
+            <button id="callBtn" class="btn primary">call</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="startArBtn" class="btn">enter ar</button>
+        <button id="muteBtn" class="btn">mute</button>
+        <button id="hangupBtn" class="btn danger">hang up</button>
+      </div>
+
+      <p class="hint">
+        tip: open this page on two devices. share your id. click <em>enter ar</em>, then <em>call</em>. remote video is segmented on your device, and vice-versa.
+      </p>
+
+      <div id="status" class="status">status: booting…</div>
+    </section>
+
+    <!-- hidden media elements -->
+    <video id="localVideo" playsinline muted></video>
+    <video id="remoteVideo" playsinline></video>
+
+    <!-- WebXR AR canvas is created by three.js -->
+  </main>
+
+  <!-- App (modules) -->
+  <script type="module" src="./personMatte.js"></script>
+  <script type="module" src="./demo.js"></script>
+</body>
+</html>
