@@ -1,0 +1,18 @@
+:root { --bg:#0b0b0c; --card:#141417; --fg:#e8e8ea; --dim:#9a9aa3; --accent:#4ad1ff; --danger:#ff4d4d; }
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+.wrap{max-width:900px;margin:32px auto;padding:0 16px}
+.card{background:var(--card);padding:20px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+h1{text-transform:lowercase;font-weight:700;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 14px}
+.row{display:flex;gap:8px}
+.lbl{display:block;color:var(--dim);margin-bottom:6px}
+input{flex:1;padding:10px 12px;border-radius:12px;border:1px solid #222;background:#0f0f12;color:var(--fg)}
+input.mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+.btn{border:1px solid #2a2a30;background:#18181c;color:var(--fg);padding:10px 14px;border-radius:12px;cursor:pointer}
+.btn:hover{border-color:#3a3a40}
+.btn.primary{background:var(--accent);color:#041319;border-color:transparent}
+.btn.danger{background:var(--danger);color:#180808;border-color:transparent}
+.hint{color:var(--dim);margin:10px 0 0}
+.status{margin-top:10px;color:var(--accent)}
+video{display:none}
